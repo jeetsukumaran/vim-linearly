@@ -49,27 +49,25 @@ onoremap <SID>(underline) _
 
 " <S-j> Join Lines Operator {{{2
 " Like 'J' for join, but takes motions etc.)
-func! s:_joinoperator(submode)
+func! s:_joinoperator()
         '[,']join
 endfunc
 " override 'join with spaces' to take operator
 nnoremap <silent> J :set operatorfunc=<SID>_joinoperator<CR>g@
-" override 'join with no spaces' to take operator
 onoremap <silent> J j
-" special case: JJ  = Join current block
 nmap <silent> JJ Jip
 " }}}2
 
 " <C-j> Split Sentences Out Into Separate Line Operator {{{2
-silent! nmap <silent> <unique> <C-j> :<C-U>set opfunc=linearly#SplitIntoLinesBySentence<CR>g@
-silent! xmap <silent> <unique> <C-j> :<C-U>call linearly#SplitIntoLinesBySentence("'<", "'>")<CR>
-silent! nmap <unique><expr> <C-j><C-j>  '<C-j>' . v:count1 . '<SID>(underline)'
+silent! nmap <silent> g<C-j> :<C-U>set opfunc=linearly#SplitIntoLinesBySentence<CR>g@
+silent! xmap <silent> g<C-j> :<C-U>call linearly#SplitIntoLinesBySentence("'<", "'>")<CR>
+silent! nmap <expr> <C-j><C-j>  '<C-j>' . v:count1 . '<SID>(underline)'
 " }}}2
 
 " <M-j> Split Into Lines on Expression Operator {{{2
-silent! nmap <silent> <unique> <M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
-silent! xmap <silent> <unique> <M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
-silent! nmap <unique><expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
+silent! nmap <silent> g<M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
+silent! xmap <silent> g<M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
+silent! nmap <expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
 " 2}}}
 
 "
@@ -80,9 +78,9 @@ silent! nmap <unique><expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
 " endfunc
 " nnoremap <silent> gJ :set operatorfunc=<SID>_gjoinoperator<CR>g@
 
-silent! nmap <silent> <unique> gJ :<C-U>set opfunc=linearly#JoinLinesWithExpression<CR>g@
-silent! xmap <silent> <unique> gJ :<C-U>call linearly#JoinLinesWithExpression("'<", "'>")<CR>
-silent! nmap <unique> gJJ  gJip
+silent! nmap <silent> ggJ :<C-U>set opfunc=linearly#JoinLinesWithExpression<CR>g@
+silent! xmap <silent> ggJ :<C-U>call linearly#JoinLinesWithExpression("'<", "'>")<CR>
+silent! nmap ggJJ  gJip
 " }}}1
 
 " Restore State {{{1
