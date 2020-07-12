@@ -59,14 +59,14 @@ nmap <silent> JJ Jip
 " }}}2
 
 " <C-j> Split Sentences Out Into Separate Line Operator {{{2
-silent! nmap <silent> g<C-j> :<C-U>set opfunc=linearly#SplitIntoLinesBySentence<CR>g@
-silent! xmap <silent> g<C-j> :<C-U>call linearly#SplitIntoLinesBySentence("'<", "'>")<CR>
+silent! nmap <silent> <C-j> :<C-U>set opfunc=linearly#SplitIntoLinesBySentence<CR>g@
+silent! xmap <silent> <C-j> :<C-U>call linearly#SplitIntoLinesBySentence("'<", "'>")<CR>
 silent! nmap <expr> <C-j><C-j>  '<C-j>' . v:count1 . '<SID>(underline)'
 " }}}2
 
 " <M-j> Split Into Lines on Expression Operator {{{2
-silent! nmap <silent> g<M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
-silent! xmap <silent> g<M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
+silent! nmap <silent> <M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
+silent! xmap <silent> <M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
 silent! nmap <expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
 " 2}}}
 
@@ -78,9 +78,9 @@ silent! nmap <expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
 " endfunc
 " nnoremap <silent> gJ :set operatorfunc=<SID>_gjoinoperator<CR>g@
 
-silent! nmap <silent> ggJ :<C-U>set opfunc=linearly#JoinLinesWithExpression<CR>g@
-silent! xmap <silent> ggJ :<C-U>call linearly#JoinLinesWithExpression("'<", "'>")<CR>
-silent! nmap ggJJ  gJip
+silent! nmap <silent> gJ :<C-U>set opfunc=linearly#JoinLinesWithExpression<CR>g@
+silent! xmap <silent> gJ :<C-U>call linearly#JoinLinesWithExpression("'<", "'>")<CR>
+silent! nmap gJJ  Jip
 " }}}1
 
 " Restore State {{{1
