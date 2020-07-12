@@ -2,7 +2,9 @@
 
 This is a plugin for Vim that provides a set of [operators](http://vimdoc.sourceforge.net/htmldoc/motion.html#operator) to manipulate line units: splitting a single line into natural language sentence lines or otherwise on an arbitrary regular expression, or joining them with various delimiters (or no delimiter at all).
 
-# ``J``: Join Lines
+# Operators
+
+## ``J``: Join Lines
 
 Vim, by default, provides a [``J`` key-mapping](http://vimdoc.sourceforge.net/htmldoc/change.html#J) (or ``<Shift-J>``, represented as ``<S-j>`` in Vim) that joins lines into a single line.
 This plugin overrides this mapping to transform this key into an [operator](http://vimdoc.sourceforge.net/htmldoc/motion.html#operator), i.e. one that takes a motion as well as count.
@@ -19,12 +21,12 @@ For e.g.:
 A special mapping, ``<S-j><S-j>`` (or "JJ") joins the current contiguous block of text into a single line, as a counterpart to ``<C-j><C-j>`` below.
 So, ``<C-j><C-j>`` and ``<S-j><S-j>`` will in effect "toggle" a block of text into separate lines and back into a block again.
 
-# ``gJ``: Join Lines with Delimiter
+## ``gJ``: Join Lines with Delimiter
 
 As above, but you will be prompted to enter a string that will inserted between the joined lines.
 If you enter nothing (just hit ``<CR>`` or ``<ESC>`` at the prompt), you will replicate the native Vim ``gJ`` operation, i.e. join lines without spaces.
 
-# ``<C-j>``: Split Text to Separate Lines By Sentence
+## ``<C-j>``: Split Text to Separate Lines By Sentence
 
 As a counterpart to ``<S-j>``, this plugin also provides ``<C-j>``, or "Control+J".
 This is an operator that splits a region of text specified by a count, motion, or visual selection into separate lines, with each sentence getting its own line.
@@ -40,8 +42,13 @@ As this is an operator, you can provide counts and motions, e.g.:
 
 In addition ``<C-j><C-j>`` will apply the operation to just the current line, while with a visual selection active, just ``<C-j>`` by itself will apply the operation to the selection.
 
-# ``<M-j>``: Split Text to Separate Lines On Expression
+## ``<M-j>``: Split Text to Separate Lines On Expression
 
 As above, but you will be prompted to enter an expression that will be used to identify the end of line units.
 If you enter nothing (just hit ``<CR>`` or ``<ESC>`` at the prompt), the operation will be canceled.
 
+# Acknowledgements
+
+This plugin includes code and/or logic derived from:
+
+-   [vim-sentence-chopper](https://github.com/Konfekt/vim-sentence-chopper).
