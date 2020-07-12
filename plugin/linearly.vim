@@ -49,7 +49,7 @@ onoremap <SID>(underline) _
 
 " <S-j> Join Lines Operator {{{2
 " Like 'J' for join, but takes motions etc.)
-func! s:_joinoperator()
+func! s:_joinoperator(submode)
         '[,']join
 endfunc
 " override 'join with spaces' to take operator
