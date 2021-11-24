@@ -64,10 +64,10 @@ silent! xmap <silent> <C-j> :<C-U>call linearly#SplitIntoLinesBySentence("'<", "
 silent! nmap <expr> <C-j><C-j>  '<C-j>' . v:count1 . '<SID>(underline)'
 " }}}2
 
-" <M-j> Split Into Lines on Expression Operator {{{2
-silent! nmap <silent> <M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
-silent! xmap <silent> <M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
-silent! nmap <expr> <M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
+" g<M-j> Split Into Lines on Expression Operator {{{2
+silent! nmap <silent> g<M-j> :<C-U>set opfunc=linearly#SplitIntoLinesOnExpression<CR>g@
+silent! xmap <silent> g<M-j> :<C-U>call linearly#SplitIntoLinesOnExpression("'<", "'>")<CR>
+silent! nmap <expr> g<M-j><M-j>  '<M-j>' . v:count1 . '<SID>(underline)'
 " 2}}}
 
 "

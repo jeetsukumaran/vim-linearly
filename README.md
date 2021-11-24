@@ -42,7 +42,7 @@ As this is an operator, you can provide counts and motions, e.g.:
 
 In addition ``<C-j><C-j>`` will apply the operation to just the current line, while with a visual selection active, just ``<C-j>`` by itself will apply the operation to the selection.
 
-## ``<M-j>``: Split Text to Separate Lines On Expression
+## ``g<C-j>``: Split Text to Separate Lines On Expression
 
 As above, but you will be prompted to enter an expression that will be used to identify the end of line units.
 If you enter nothing (just hit ``<CR>`` or ``<ESC>`` at the prompt), the operation will be canceled.
